@@ -1,0 +1,92 @@
+/*Estilos generales */
+.headerDropDown{
+    position: fixed;
+    z-index: 10;
+    left: -10rem;
+    width: 10rem;
+    height: 100%;
+    background-color: #0D1A35;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2.5rem;
+    box-shadow: 3px 0px 8px -1px rgba(0,0,0,0.54);
+    transition: all .5s ease-in-out ;
+}
+/*Estilo para el logo de la cabecera*/
+.headerDropDown__logo{
+    width: 2.5rem;
+    height: 2.5rem;
+
+    background-color:#F44336;
+}
+    /*Estilos para la lista de opciones*/
+    .headerDropDown__list{
+        margin-top: 2.5rem;
+        height: 20rem;
+        color: white;
+    }
+    .headerDropDown__list-element{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        font-size: .8rem;
+    }
+
+    .iconHome{
+        background: url(../img/iconHogar.png) center/cover  no-repeat ;
+    }
+    .iconSkills{
+        background: url(../img/iconHabilidades.png) center/cover  no-repeat ;
+    }
+    .iconProyects{
+        background: url(../img/iconMaleta.png) center/cover  no-repeat ;
+    }
+    .iconHome,
+    .iconSkills,
+    .iconProyects{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+
+/*Estilos para el btn  de despliege */
+.headerDropDown__btn{
+    position: absolute;
+    top: 30%;
+    left: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #0D1A35;
+    width: auto;
+    height: 4rem;
+    
+}
+.headerDropDown__btn-open{
+    background: url(../img/iconFlechaDerecha.png) center/cover  no-repeat;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.headerDropDown__btn-clouse{
+    position: fixed;
+    background: url(../img/iconFlechaDerecha.png) center/cover  no-repeat;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all .3s ease-in-out;
+}
+#checkDropDownHeader:checked +.headerDropDown label .headerDropDown__btn-clouse{
+    transform: rotateZ(180deg) translateX(-.7rem);
+}
+#checkDropDownHeader:checked +.headerDropDown label{
+    width: 2.6rem;
+} 
+#checkDropDownHeader:checked ~ .headerDropDown{
+    left: 0;
+} 
+#checkDropDownHeader{
+    display: none;
+}
+.headerDropDown__btn label{
+    display: flex; 
+}

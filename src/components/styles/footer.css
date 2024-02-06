@@ -1,0 +1,24 @@
+.footerMain{
+    width: 100%;
+    height: 4rem;
+    background: #F7EFDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerNetworks{
+    width: 8rem;
+    height: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.containerNetworks__item{
+    width: auto;
+    height: auto;
+}
+.containerNetworks__item-icon ,.containerNetworks__item-icon img{
+    width: 2rem;
+    height: 2rem;
+
+}

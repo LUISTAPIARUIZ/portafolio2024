@@ -1,0 +1,9 @@
+.App,
+.containerApp{
+    width: 100%;
+    height: auto;
+}
+.containerApp{
+    max-width: 130rem;
+    margin: 0 auto;
+}

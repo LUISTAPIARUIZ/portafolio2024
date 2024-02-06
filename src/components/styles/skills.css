@@ -1,0 +1,301 @@
+.containerSkills{
+    width: 100%;
+    height: 40rem;
+    background-color: #F7EFDD;
+}
+.Skills{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 85%;
+    width: 100%;
+    height: 75%;
+    place-items: center;
+    margin: auto;
+    padding: 1.5rem 0 0 0;
+}
+/*____Estilos para el titulo de skills*/
+.titleSkills{
+    font-size: 3rem;
+}
+.titleSkills h3{
+  display: block;
+  font-family: monospace;
+  white-space: nowrap;
+  width: 11ch;
+  animation: typing 2s steps(11), blink .5s infinite step-end alternate;
+  overflow: hidden;
+}
+@keyframes typing{
+  from {width: 0;}
+}
+@keyframes blink{
+  50%{
+    border-color: transparent;
+  }
+
+}
+
+  
+.ContainerTransition{
+  width: 100%;
+  height: 25%;
+}
+.ContainerTransition svg{
+    width: 100%;
+    height:100% ;
+}
+.ContainerTransition svg path{
+    width: 100%;
+    height:100%  ;
+}
+.carrouselSkills{
+    width: 35rem;
+    height: 80%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*_______________Estilos para las card de skills______________*/
+.skillcard{
+  position: absolute;
+  width:auto;
+  height: 150px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80% 20%;
+  place-items: center;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+}
+.cardDescription__figure{
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardDescription{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 1fr;
+  place-items: center;
+}
+.cardDescription__figure img{
+  width: 70%;
+  object-fit: contain;
+}
+.cardBar{
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 1fr;
+}
+.cardBar_container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.cardBar_container-all{
+  background-color: rgb(147, 147, 147);
+  width: 100%;
+  height: .7rem;
+  border-radius: 15px;
+}
+.cardBar_container-partial{
+  position: absolute;
+  top: 26%;
+  width: 80%;
+  height: .7rem;
+  border-radius: 15px;
+  background-color: red;
+}
+
+  /*_____________Estilos para la animacion de rotacion___________*/
+  .container {
+    width: 15rem;
+    height: 150px;
+    position: relative;
+    bottom: -30%;
+    opacity: 0;
+    -webkit-perspective: 1100px;
+    -moz-perspective: 1100px;
+    -ms-perspective: 1100px;
+    perspective: 1100px;
+  }
+  
+  #carousel {
+    width: auto;
+    height: 150px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    -ms-transition: -ms-transform 1s;
+    transition: transform 1s;
+    -webkit-animation: rotating 20s linear infinite;
+    -moz-animation: rotating 20s linear infinite;
+    -o-animation: rotating 20s linear infinite;
+    -ms-animation: rotating 20s linear infinite;
+    animation: rotating 20s linear infinite;
+  }
+  #carousel:hover {
+    animation-play-state: paused;
+    -o-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+  }
+  #carousel .skillcard:nth-child(1) {
+    -webkit-transform: rotateY(0deg) translateZ(500px);
+    -moz-transform: rotateY(0deg) translateZ(500px);
+    -ms-transform: rotateY(0deg) translateZ(500px);
+    -o-transform: rotateY(0deg) translateZ(500px);
+    transform: rotateY(0deg) translateZ(500px);
+  }
+  #carousel .skillcard:nth-child(2) {
+    -webkit-transform: rotateY(60deg) translateZ(500px);
+    -moz-transform: rotateY(60deg) translateZ(500px);
+    -ms-transform: rotateY(60deg) translateZ(500px);
+    -o-transform: rotateY(60deg) translateZ(500px);
+    transform: rotateY(60deg) translateZ(500px);
+  }
+  #carousel .skillcard:nth-child(3) {
+    -webkit-transform: rotateY(120deg) translateZ(500px);
+    -moz-transform: rotateY(120deg) translateZ(500px);
+    -ms-transform: rotateY(120deg) translateZ(500px);
+    -o-transform: rotateY(120deg) translateZ(500px);
+    transform: rotateY(120deg) translateZ(500px);
+  }
+  #carousel .skillcard:nth-child(4) {
+    -webkit-transform: rotateY(180deg) translateZ(500px);
+    -moz-transform: rotateY(180deg) translateZ(500px);
+    -ms-transform: rotateY(180deg) translateZ(500px);
+    -o-transform: rotateY(180deg) translateZ(500px);
+    transform: rotateY(180deg) translateZ(500px);
+  }
+  #carousel .skillcard:nth-child(5) {
+    -webkit-transform: rotateY(240deg) translateZ(500px);
+    -moz-transform: rotateY(240deg) translateZ(500px);
+    -ms-transform: rotateY(240deg) translateZ(500px);
+    -o-transform: rotateY(240deg) translateZ(500px);
+    transform: rotateY(240deg) translateZ(500px);
+  }
+  #carousel .skillcard:nth-child(6) {
+    -webkit-transform: rotateY(300deg) translateZ(500px);
+    -moz-transform: rotateY(300deg) translateZ(500px);
+    -ms-transform: rotateY(300deg) translateZ(500px);
+    -o-transform: rotateY(300deg) translateZ(500px);
+    transform: rotateY(300deg) translateZ(500px);
+  }
+  
+  @keyframes rotating {
+    from {
+      -webkit-transform-origin: 50% 50%;
+      -moz-transform-origin: 50% 50%;
+      -o-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      -o-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+    to {
+      -webkit-transform-origin: 50% 50%;
+      -moz-transform-origin: 50% 50%;
+      -o-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: rotateY(-360deg);
+      -moz-transform: rotateY(-360deg);
+      -o-transform: rotateY(-360deg);
+      -ms-transform: rotateY(-360deg);
+      transform: rotateY(-360deg);
+    }
+  }
+
+
+  /*Estios para mobile*/
+  @media only screen and (max-width: 767px) {
+    /* Estilos para pantallas de teléfonos celulares */
+    body {
+        font-size: 14px; /* Ejemplo de ajuste del tamaño de fuente para pantallas más pequeñas */
+    }
+    .containerSkills{
+        height: 35rem;
+    }
+    .Skills{
+        width: 90%;
+    }
+    .titleSkills{
+        font-size: 2rem;
+    }
+    .carrouselSkills{
+        width: 20rem;
+    }
+    .skillcard{
+        width: 12rem;
+        height: 100%;
+    }
+    #carousel .skillcard:nth-child(1) {
+      -webkit-transform: rotateY(0deg) translateZ(300px);
+      -moz-transform: rotateY(0deg) translateZ(300px);
+      -ms-transform: rotateY(0deg) translateZ(300px);
+      -o-transform: rotateY(0deg) translateZ(300px);
+      transform: rotateY(0deg) translateZ(300px);
+    }
+    #carousel .skillcard:nth-child(2) {
+      -webkit-transform: rotateY(60deg) translateZ(300px);
+      -moz-transform: rotateY(60deg) translateZ(300px);
+      -ms-transform: rotateY(60deg) translateZ(300px);
+      -o-transform: rotateY(60deg) translateZ(300px);
+      transform: rotateY(60deg) translateZ(300px);
+    }
+    #carousel .skillcard:nth-child(3) {
+      -webkit-transform: rotateY(120deg) translateZ(300px);
+      -moz-transform: rotateY(120deg) translateZ(300px);
+      -ms-transform: rotateY(120deg) translateZ(300px);
+      -o-transform: rotateY(120deg) translateZ(300px);
+      transform: rotateY(120deg) translateZ(300px);
+    }
+    #carousel .skillcard:nth-child(4) {
+      -webkit-transform: rotateY(180deg) translateZ(300px);
+      -moz-transform: rotateY(180deg) translateZ(300px);
+      -ms-transform: rotateY(180deg) translateZ(300px);
+      -o-transform: rotateY(180deg) translateZ(300px);
+      transform: rotateY(180deg) translateZ(300px);
+    }
+    #carousel .skillcard:nth-child(5) {
+      -webkit-transform: rotateY(240deg) translateZ(300px);
+      -moz-transform: rotateY(240deg) translateZ(300px);
+      -ms-transform: rotateY(240deg) translateZ(300px);
+      -o-transform: rotateY(240deg) translateZ(300px);
+      transform: rotateY(240deg) translateZ(300px);
+    }
+    #carousel .skillcard:nth-child(6) {
+      -webkit-transform: rotateY(300deg) translateZ(300px);
+      -moz-transform: rotateY(300deg) translateZ(300px);
+      -ms-transform: rotateY(300deg) translateZ(300px);
+      -o-transform: rotateY(300deg) translateZ(300px);
+      transform: rotateY(300deg) translateZ(300px);
+    }
+    
+  }
+
+
+
+
+  

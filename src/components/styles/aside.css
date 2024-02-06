@@ -1,0 +1,199 @@
+
+/*_________________Estilos del Slider principal_______________*/
+.asideMain,
+.containerCarousel,
+.slider-container,
+.slider1,
+.slider2,
+.slider3{
+    width: 100%;
+    height: 35rem;   
+}
+/*Estilos para la barra de posicionamiento de slider*/
+.slider-control-bottomcenter{
+    position: absolute;
+    left: 3rem;
+    bottom: 1.5rem;
+    width: 5rem;
+}
+.slider-control-bottomcenter div{
+    justify-content: space-between;
+    height: 1.5rem; 
+}
+.slider-control-bottomcenter div svg{
+    width: 15px;
+    height: 15px;
+}
+.paging-dot{
+    border: solid #0B162E 3px; 
+    border-radius: 50%;
+    
+}
+.paging-item{
+    fill: #f6f4f4 !important;
+}
+.active{
+    fill: #31394A !important;
+}
+.active svg{
+    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.75);
+}
+.slider-control-bottomcenter div .active svg circle{
+    background-color: darkblue !important;
+}
+.slider-control-centerright,
+.slider-control-centerleft{
+    display: none;
+}
+/*________________Estilos para los sliders y contenido_____________*/
+
+.slider2{
+    background-color: #03213c;
+
+}
+.slider3{
+    background-color: #2755c1;
+}
+
+.slider2, .slider3 {
+    position: relative;
+    z-index: 2;
+}
+
+/*________Estilos especificos para slider 1____________*/
+.slider1{
+    background-color: #081022;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 35rem;
+    place-items: center;
+    color: white;
+    padding: 0 12rem;
+}
+.slider1__presentation,
+.slider1__containerPerson{
+    position: relative;
+}
+
+.slider1__presentation-text{
+    font-size: 2.5rem;
+    width: 80%;
+    margin-bottom: 5rem;
+}
+.slider1:hover .slider1__presentation-text span{
+    animation: 0.3s glitch infinite;
+}
+
+
+.slider1__containerPerson{
+    width: 100%;
+    height: 100%;
+}
+.slider1__containerPerson{
+    width: 100%;
+    height: 100%;
+}
+.slider1__containerPerson figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    position: absolute;
+    bottom:0;
+}
+.slider1__containerPerson figure img{
+    height: 90%;
+
+}
+.slider1__presentation-button{
+    width: 10rem;
+    height: 3rem;
+    position: relative;
+    background-color: transparent;
+    border: 2.5px solid #A1C79E;
+    color:#A1C79E ;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    cursor: pointer;
+    overflow: hidden;
+
+}
+.slider1__presentation-button div{
+    position: absolute;
+    width: 10rem;
+    height: 3rem;
+    background-color:#A1C79E ;
+    top: -3rem;
+    left: -10rem;
+    transition: all .5s ease-in-out;
+}
+
+.slider1__presentation-button p{
+    font-size: 1.3rem;
+    position: absolute;
+    margin-left:1rem ;
+    left: 0;
+}
+.slider1__presentation-button svg{
+    font-size: 1.3rem;
+    position: absolute;
+    margin-right: 1rem;
+    right: 0;
+}
+.slider1__presentation-button:hover  .animactionBtnContactar{
+    top: 0;
+    left: 0;
+}
+.slider1__presentation-button:hover{
+    color: white;
+}
+
+
+
+/*_____________Animacion Glitch text____________*/
+
+@keyframes glitch {
+    0%{
+        text-shadow: red -3px 0,cyan 3px 0;
+    }
+    50%{
+        text-shadow: red 3px 0,cyan -3px 0;
+    }
+    100%{
+        text-shadow: red -3px 0,cyan 3px 0;
+    }
+}
+
+/* _________Estilos para moviles_______________*/
+
+@media only screen and (max-width: 1200px) {
+    .slider1{
+        padding:0 4rem;
+    }
+    .slider1__presentation-text{
+        margin-bottom: 2rem;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .slider1{
+        grid-template-columns: 1fr;
+        grid-template-rows: 35rem;
+        padding: 1.2rem;
+    }
+    .slider1__containePerson{
+        display: none;
+    }
+    .slider1__presentation-text{
+        font-size: 2.5rem;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .slider1__presentation-text span{
+        animation: 0.3s glitch infinite;
+    }
+}
+
+
+

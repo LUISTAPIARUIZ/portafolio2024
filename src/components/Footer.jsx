@@ -1,20 +1,20 @@
 import React from "react";
 import "./styles/footer.css"
-import githubIcon from "./img/github.png"
-import linkedinIcon from "./img/linkedin.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const Footer =()=>{
     return(
         <footer className="footerMain">
             <div className="containerNetworks">
-                <a href="" className="containerNetworks__item">
+                <a href="https://github.com/tu-usuario-de-github" target="_blank" rel="noopener noreferrer" className="containerNetworks__item">
                     <figure className="containerNetworks__item-icon">
-                        <img src={githubIcon} alt="icono de github" />
+                        <FontAwesomeIcon icon={faGithub} />
                     </figure>
                 </a>
-                <a href="" className="containerNetworks__item">
+                <a href="https://www.linkedin.com/in/tu-perfil-de-linkedin" target="_blank" rel="noopener noreferrer" className="containerNetworks__item">
                     <figure className="containerNetworks__item-icon">
-                        <img src={linkedinIcon} alt="icono de linkedin" />
+                        <FontAwesomeIcon icon={faLinkedin} />
                     </figure>
                 </a>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/proyects.css"
 import imgCursosFemulp from "./img/Projects/CursosFemulp.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,6 +8,29 @@ import { faDatabase, faEye, faTimes, faPlay } from '@fortawesome/free-solid-svg-
 const Proyects = () => {
   const [popupAbierto, setPopupAbierto] = useState(false);
   const [proyectoActual, setProyectoActual] = useState(null);
+  const [visibleProyectos, setVisibleProyectos] = useState([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const proyectosElements = document.querySelectorAll('.ProyectsMain__img');
+      proyectosElements.forEach((element, index) => {
+        const position = element.getBoundingClientRect();
+        if (position.top < window.innerHeight - 50) {
+          setVisibleProyectos(prev => {
+            if (!prev.includes(index)) {
+              return [...prev, index];
+            }
+            return prev;
+          });
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Comprueba la visibilidad inicial
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const proyectos = [
     {
@@ -93,12 +116,15 @@ const Proyects = () => {
   };
 
   return (
-    <section className='proyects'>
+    <section className="proyects">
       <div className='containerProyects'>
         <h3 className='ProyetsTitle'>PROYECTOS</h3>
         <div className='ProyectsMain'>
           {proyectos.map((proyecto, index) => (
-            <div key={index} className="ProyectsMain__img">
+            <div 
+              key={index} 
+              className={`ProyectsMain__img ${visibleProyectos.includes(index) ? 'visible' : ''}`}
+            >
               <img className="ProyectsMain__img--img" src={proyecto.imagen} alt={proyecto.titulo} />
               <div className="ProyectsMain__overlay">
                 <FontAwesomeIcon icon={faEye} className="view-icon" onClick={() => abrirPopup(proyecto)} />

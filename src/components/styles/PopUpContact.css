@@ -2,23 +2,26 @@
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     z-index: 10;
 }
 
 .popup-content {
     background: white;
-    padding:1.5rem 3rem;
+    padding: 2rem;
     border-radius: 8px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    width: auto;
+    width: 45%;
+    max-width: 800px;
     text-align: center;
     position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 button {
@@ -35,7 +38,6 @@ button {
     position: relative;
 }
 .popup__form-block{
-    width: 30rem;
     position: relative;
 }
 .block-dual{
@@ -105,4 +107,57 @@ button {
     top: 1rem;
     right: 1rem;
     margin: 0;
+}
+
+@media (max-width: 1200px) {
+    .popup-content {
+        width: 60%;
+    }
+}
+
+@media (max-width: 992px) {
+    .popup-content {
+        width: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .popup-content {
+        width: 85%;
+        padding: 1.5rem;
+    }
+
+    .block-dual {
+        grid-template-columns: 1fr;
+    }
+
+    input,
+    textarea {
+        font-size: 16px; /* Previene el zoom en iOS */
+    }
+
+    .labelInput,
+    .labelTextarea {
+        font-size: 14px;
+    }
+
+    .labelActive {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .popup__title h3 {
+        font-size: 1.5rem;
+        padding: .5rem 0 1rem 0;
+    }
+
+    .btnSubmitFormContact {
+        width: 100%;
+    }
 }

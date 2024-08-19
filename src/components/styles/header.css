@@ -15,10 +15,13 @@
 }
 /*Estilo para el logo de la cabecera*/
 .headerDropDown__logo{
-    width: 2.5rem;
-    height: 2.5rem;
-
-    background-color:#F44336;
+ width: 100%;
+ display:  flex;
+ justify-content: center;
+ align-items: center;
+}
+.headerDropDown__logo img{
+ width: 80%;
 }
     /*Estilos para la lista de opciones*/
     .headerDropDown__list{

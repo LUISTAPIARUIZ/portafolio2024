@@ -1,11 +1,18 @@
 import './App.css';
+import React, { useState } from 'react';
 import Cabecera  from "./components/Header.jsx";
 import Aside  from "./components/Aside.jsx";
 import Skills from "./components/Skills.jsx"
 import Proyects from "./components/Proyects.jsx";
 import Footer from "./components/Footer.jsx";
+import PopUpContact from "./components/PopUpContact.jsx";
 
 function App() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopup = () => {
+      setShowPopup(!showPopup);
+  };
   return (
     <div className="App">
       
@@ -13,7 +20,8 @@ function App() {
         {/* cabecera principal*/}
         <Cabecera />      
         {/* Seccion de presentacion */}
-        <Aside/>
+        <Aside togglePopup={togglePopup}/>  
+        <PopUpContact show={showPopup} onClose={togglePopup} />
         {/* Seccion de habilidades */}
         <Skills/>
         {/* Seccion de proyectos */}

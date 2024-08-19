@@ -1,6 +1,6 @@
 import React from "react";
-import "./styles/header.css"
-
+import "./styles/header.css";
+import iconLogoLuDev from "./img/LogoLuDev.png";
 
 const Header = ()=>{
     return(
@@ -8,7 +8,7 @@ const Header = ()=>{
             <input type="checkbox" name="" id="checkDropDownHeader" />
             <header className='headerDropDown'>
                 <figure className='headerDropDown__logo'>
-                    <img src="" alt="" />
+                    <img src={iconLogoLuDev} alt="" />
                 </figure>
                 <ul className='headerDropDown__list'>
                     <li className='headerDropDown__list-element'>

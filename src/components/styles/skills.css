@@ -116,7 +116,7 @@
   width: 80%;
   height: .7rem;
   border-radius: 15px;
-  background-color: red;
+  background-color:#0d2239;
 }
 
   /*_____________Estilos para la animacion de rotacion___________*/
@@ -165,39 +165,46 @@
     transform: rotateY(0deg) translateZ(500px);
   }
   #carousel .skillcard:nth-child(2) {
-    -webkit-transform: rotateY(60deg) translateZ(500px);
-    -moz-transform: rotateY(60deg) translateZ(500px);
-    -ms-transform: rotateY(60deg) translateZ(500px);
-    -o-transform: rotateY(60deg) translateZ(500px);
-    transform: rotateY(60deg) translateZ(500px);
+    -webkit-transform: rotateY(51.5deg) translateZ(500px);
+    -moz-transform: rotateY(51.5deg) translateZ(500px);
+    -ms-transform: rotateY(51.5deg) translateZ(500px);
+    -o-transform: rotateY(51.5deg) translateZ(500px);
+    transform: rotateY(51.5deg) translateZ(500px);
   }
   #carousel .skillcard:nth-child(3) {
-    -webkit-transform: rotateY(120deg) translateZ(500px);
-    -moz-transform: rotateY(120deg) translateZ(500px);
-    -ms-transform: rotateY(120deg) translateZ(500px);
-    -o-transform: rotateY(120deg) translateZ(500px);
-    transform: rotateY(120deg) translateZ(500px);
+    -webkit-transform: rotateY(102.4deg) translateZ(500px);
+    -moz-transform: rotateY(102.4deg) translateZ(500px);
+    -ms-transform: rotateY(102.4deg) translateZ(500px);
+    -o-transform: rotateY(102.4deg) translateZ(500px);
+    transform: rotateY(102.4deg) translateZ(500px);
   }
   #carousel .skillcard:nth-child(4) {
-    -webkit-transform: rotateY(180deg) translateZ(500px);
-    -moz-transform: rotateY(180deg) translateZ(500px);
-    -ms-transform: rotateY(180deg) translateZ(500px);
-    -o-transform: rotateY(180deg) translateZ(500px);
-    transform: rotateY(180deg) translateZ(500px);
+    -webkit-transform: rotateY(153.6deg) translateZ(500px);
+    -moz-transform: rotateY(153.6deg) translateZ(500px);
+    -ms-transform: rotateY(153.6deg) translateZ(500px);
+    -o-transform: rotateY(153.6deg) translateZ(500px);
+    transform: rotateY(153.6deg) translateZ(500px);
   }
   #carousel .skillcard:nth-child(5) {
-    -webkit-transform: rotateY(240deg) translateZ(500px);
-    -moz-transform: rotateY(240deg) translateZ(500px);
-    -ms-transform: rotateY(240deg) translateZ(500px);
-    -o-transform: rotateY(240deg) translateZ(500px);
-    transform: rotateY(240deg) translateZ(500px);
+    -webkit-transform: rotateY(204.8deg) translateZ(500px);
+    -moz-transform: rotateY(204.8deg) translateZ(500px);
+    -ms-transform: rotateY(204.8deg) translateZ(500px);
+    -o-transform: rotateY(204.8deg) translateZ(500px);
+    transform: rotateY(204.8deg) translateZ(500px);
   }
   #carousel .skillcard:nth-child(6) {
-    -webkit-transform: rotateY(300deg) translateZ(500px);
-    -moz-transform: rotateY(300deg) translateZ(500px);
-    -ms-transform: rotateY(300deg) translateZ(500px);
-    -o-transform: rotateY(300deg) translateZ(500px);
-    transform: rotateY(300deg) translateZ(500px);
+    -webkit-transform: rotateY(256deg) translateZ(500px);
+    -moz-transform: rotateY(256deg) translateZ(500px);
+    -ms-transform: rotateY(256deg) translateZ(500px);
+    -o-transform: rotateY(256deg) translateZ(500px);
+    transform: rotateY(256deg) translateZ(500px);
+  }
+  #carousel .skillcard:nth-child(7) {
+    -webkit-transform: rotateY(307.2deg) translateZ(500px);
+    -moz-transform: rotateY(307.2deg) translateZ(500px);
+    -ms-transform: rotateY(307.2deg) translateZ(500px);
+    -o-transform: rotateY(307.2deg) translateZ(500px);
+    transform: rotateY(307.2deg) translateZ(500px);
   }
   
   @keyframes rotating {
@@ -299,3 +306,11 @@
 
 
   
+
+
+
+
+
+
+
+

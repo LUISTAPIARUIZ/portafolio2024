@@ -1,14 +1,27 @@
-import React, {  useState } from "react";
+import React from "react";
 import "./styles/skills.css"
 import iconHtml from "./img/html-5.png"
 import iconCSS from "./img/css.png"
 import iconReact from "./img/React.png"
 import iconJs from "./img/js.png"
 import iconPython from "./img/Python.png"
+import iconPHP from "./img/PHP.png"
 import iconPosgrestSQL from "./img/Postgresql.png"
 import useIntersection from "./useIntersection.jsx";
 
+const skillData = [
+  { id: 1, title: 'HTML 5', icon: iconHtml , progress: 100},
+  { id: 2, title: 'CSS 3', icon: iconCSS , progress: 80},
+  { id: 3, title: 'Javascript', icon: iconJs , progress: 70},
+  { id: 4, title: 'React', icon: iconReact , progress: 70},
+  { id: 5, title: 'Python', icon: iconPython, progress: 50},
+  { id: 6, title: 'PosgrestSql', icon: iconPosgrestSQL, progress: 60},
+  { id: 7, title: 'PHP', icon: iconPHP, progress: 60},
+
+];
+
  const Skills = () =>{
+  
     const [elementoRef,isIntersecting]= useIntersection({
       threshold:0.3,
     });
@@ -25,99 +38,23 @@ import useIntersection from "./useIntersection.jsx";
                 transition: 'bottom 1s ease, opacity 1s ease' // Transición con duración de 2 segundos
               }}>
                 <div id="carousel">
-                
-                  <div className='skillcard'>
+                  {skillData.map(skill => (
+                    <div className='skillcard' key={skill.id}>
                       <div className="cardDescription">
                         <figure className="cardDescription__figure">
-                          <img src={iconHtml} alt="icon Html5" />
+                          <img src={skill.icon} alt={`icon ${skill.title}`} />
                         </figure>
-                        <h3>HTML 5</h3>
+                        <h3>{skill.title}</h3>
                       </div>
                       <div className="cardBar">
                         <div className="cardBar_container">
                           <span className="cardBar_container-all"></span>
-                          <span className="cardBar_container-partial"></span>
+                          <span className="cardBar_container-partial" style={{ width: `${skill.progress}%` }}></span>
                         </div>
-                        <p></p>
+                        <p>{skill.progress ? `${skill.progress}%` : ''}</p>
                       </div>
-                  </div>
-                  <div className='skillcard'>
-                      <div className="cardDescription">
-                        <figure className="cardDescription__figure">
-                          <img src={iconCSS} alt="icon CSS" />
-                        </figure>
-                        <h3>CSS 3</h3>
-                      </div>
-                      <div className="cardBar">
-                        <div className="cardBar_container">
-                          <span className="cardBar_container-all"></span>
-                          <span className="cardBar_container-partial"></span>
-                        </div>
-                        <p></p>
-                      </div>
-                  </div>
-                  <div className='skillcard'>
-                      <div className="cardDescription">
-                        <figure className="cardDescription__figure">
-                          <img src={iconJs} alt="icon Javascript" />
-                        </figure>
-                        <h3>Javascript</h3>
-                      </div>
-                      <div className="cardBar">
-                        <div className="cardBar_container">
-                          <span className="cardBar_container-all"></span>
-                          <span className="cardBar_container-partial"></span>
-                        </div>
-                        <p></p>
-                      </div>
-                  </div>
-                  <div className='skillcard'>
-                      <div className="cardDescription">
-                        <figure className="cardDescription__figure">
-                          <img src={iconReact} alt="icon react" />
-                        </figure>
-                        <h3>React</h3>
-                      </div>
-                      <div className="cardBar">
-                        <div className="cardBar_container">
-                          <span className="cardBar_container-all"></span>
-                          <span className="cardBar_container-partial"></span>
-                        </div>
-                        <p></p>
-                      </div>
-                  </div>
-                  <div className='skillcard'>
-                      <div className="cardDescription">
-                        <figure className="cardDescription__figure">
-                          <img src={iconPython} alt="icon Python" />
-                        </figure>
-                        <h3>Python</h3>
-                      </div>
-                      <div className="cardBar">
-                        <div className="cardBar_container">
-                          <span className="cardBar_container-all"></span>
-                          <span className="cardBar_container-partial"></span>
-                        </div>
-                        <p></p>
-                      </div>
-                  </div>
-                  <div className='skillcard'>
-                      <div className="cardDescription">
-                        <figure className="cardDescription__figure">
-                          <img src={iconPosgrestSQL} alt="icon PosgrestSql" />
-                        </figure>
-                        <h3>PosgrestSql</h3>
-                      </div>
-                      <div className="cardBar">
-                        <div className="cardBar_container">
-                          <span className="cardBar_container-all"></span>
-                          <span className="cardBar_container-partial"></span>
-                        </div>
-                        <p>80%</p>
-                      </div>
-                  </div>
-
-                 
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

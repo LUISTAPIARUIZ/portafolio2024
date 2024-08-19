@@ -1,51 +1,286 @@
-/* Estilos generales de proycts*/
-.proyects{
+/* Estilos generales de proyectos */
+.proyects {
     width: 100%;
-    height:auto;
     background-color: #081022;
-    display: grid;
-    place-items: center;
-    padding: 0  0 4rem 0;
-}
-.containerProyects{
-    width: 75%;
-    height: auto;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.ProyetsTitle{
-    height: 5rem;
+
+.containerProyects {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 3rem 0;
+}
+
+.ProyetsTitle {
     text-align: center;
     color: white;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
-.ProyectsMain{
+
+.ProyectsMain {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 2rem;
-}
-.ProyectsMain div{
-    height: 12rem;
-    background-color: white;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
 }
 
+.ProyectsMain__img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    height: 230px;
+}
 
-/*Para dispositivos mobiles*/
+.ProyectsMain__img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
 
-@media only screen and (max-width: 767px) {
-    .containerProyects{
-        width: 90%;
+.ProyectsMain__img--img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ProyectsMain__img:hover .ProyectsMain__img--img {
+    transform: scale(1.1);
+}
+
+/* Nuevo estilo para la pestaña de tecnologías */
+.ProyectsMain__technologies {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.3s ease;
+    overflow: hidden;
+}
+
+.ProyectsMain__img:hover .ProyectsMain__technologies {
+    height: 60px;
+}
+
+.ProyectsMain__technologies i {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.tech-icon {
+    font-size: 1.5rem; /* Ajusta el tamaño según tus preferencias */
+    margin: 0 5px; /* Ajusta el espaciado entre iconos */
+    transition: transform 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: scale(1.2);
+}
+
+.ProyectsMain__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ProyectsMain__img:hover .ProyectsMain__overlay {
+    opacity: 1;
+}
+
+.view-icon {
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.ProyectsMain__popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.ProyectsMain__popup-content {
+  width: 90%;
+  max-width: 1000px;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #0a1929;
+}
+
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.popup-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.popup-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.popup-info {
+  color: #fff;
+  width: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.6) 45%, transparent);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.popup-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.popup-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.popup-technologies {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.popup-technologies .tech-icon {
+  font-size: 1.8rem;
+}
+
+.ver-proyecto-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e50914;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.ver-proyecto-btn:hover {
+  background-color: #f40612;
+}
+
+.ver-proyecto-btn .fa-play {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .containerProyects {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ProyetsTitle {
+        font-size: 2rem;
+    }
+
+    .ProyectsMain {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 0 3rem;
+    }
+
+    .ProyectsMain__popup-content {
+        width: 95%;
+        height: 90vh;
+    }
+
+    .popup-image-container img {
+        width: 100%;
         height: 100%;
+        position: absolute;
     }
-    .ProyectsMain{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        gap: 2rem;
+
+    .popup-overlay {
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(10,25,41,1) 0%, rgba(10,25,41,0.7) 50%, rgba(10,25,41,0) 100%);
     }
-    .ProyectsMain div{
-        height: 12rem;
-        background-color: white;
+
+    .popup-info {
+        width: 100%;
+        height: auto;
+        top: auto;
+        bottom: 0;
+        padding: 20px;
     }
-  }
+
+    .popup-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .popup-info p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .popup-technologies .tech-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .ProyetsTitle {
+        font-size: 1.8rem;
+    }
+
+    .ProyectsMain {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .ProyectsMain__img {
+        height: 280px;
+    }
+}

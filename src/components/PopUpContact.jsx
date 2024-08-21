@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/PopUpContact.css';
 
 const Popup = ({ show, onClose }) => {
     const [activeFields, setActiveFields] = useState({});
+    const [animate, setAnimate] = useState(false);
+
+    useEffect(() => {
+        if (show) {
+            setTimeout(() => setAnimate(true), 50);
+        } else {
+            setAnimate(false);
+        }
+    }, [show]);
 
     if (!show) {
         return null;
@@ -21,14 +30,20 @@ const Popup = ({ show, onClose }) => {
 
     const isActive = (id) => activeFields[id] || document.getElementById(id)?.value;
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Aquí puedes agregar la lógica para manejar el envío del formulario
+        console.log('Formulario enviado');
+    };
+
     return (
-        <div className="popup-overlay">
-            <div className="popup-content">
+        <div className="popup-overlay" onClick={onClose}>
+            <div className={`popup-content ${animate ? 'animate' : ''}`} onClick={(e) => e.stopPropagation()}>
                 <div className="popup">
                     <div className="popup__title">
                         <h3>Contáctame</h3>
                     </div>
-                    <form className="popup__form">
+                    <form className="popup__form" onSubmit={handleSubmit}>
                         <div className="popup__form-block">
                             <label
                                 htmlFor="nameContact"
@@ -47,21 +62,6 @@ const Popup = ({ show, onClose }) => {
                         <div className="popup__form-block block-dual">
                             <div>
                                 <label
-                                    htmlFor="mailContact"
-                                    className={`labelInput ${isActive('mailContact') ? 'labelActive' : ''}`}
-                                >
-                                    Correo
-                                </label>
-                                <input
-                                    type="mail"
-                                    name="mailContact"
-                                    id="mailContact"
-                                    onFocus={handleFocus}
-                                    onBlur={handleBlur}
-                                />
-                            </div>
-                            <div>
-                                <label
                                     htmlFor="phoneContact"
                                     className={`labelInput ${isActive('phoneContact') ? 'labelActive' : ''}`}
                                 >
@@ -78,15 +78,30 @@ const Popup = ({ show, onClose }) => {
                         </div>
                         <div className="popup__form-block">
                             <label
-                                htmlFor="affairContact"
-                                className={`labelInput ${isActive('affairContact') ? 'labelActive' : ''}`}
+                                htmlFor="emailContact"
+                                className={`labelInput ${isActive('emailContact') ? 'labelActive' : ''}`}
+                            >
+                                Correo Electrónico
+                            </label>
+                            <input
+                                type="email"
+                                name="emailContact"
+                                id="emailContact"
+                                onFocus={handleFocus}
+                                onBlur={handleBlur}
+                            />
+                        </div>
+                        <div className="popup__form-block">
+                            <label
+                                htmlFor="subjectContact"
+                                className={`labelInput ${isActive('subjectContact') ? 'labelActive' : ''}`}
                             >
                                 Asunto
                             </label>
                             <input
                                 type="text"
-                                name="affairContact"
-                                id="affairContact"
+                                name="subjectContact"
+                                id="subjectContact"
                                 onFocus={handleFocus}
                                 onBlur={handleBlur}
                             />
@@ -105,13 +120,15 @@ const Popup = ({ show, onClose }) => {
                                 onBlur={handleBlur}
                             ></textarea>
                         </div>
-                        <button className='btnSubmitFormContact' type='submit'>Enviar</button>
+                        <div className="popup__form-block btnEnviarContact">
+                            <button className='btnSubmitFormContact' type='button' onClick={handleSubmit}>Enviar</button>
+                        </div>
                     </form>
                 </div>
-                <button className='btnCerrarForm' onClick={onClose}>X</button>
+                <button className='btnCerrarForm' onClick={onClose}>&times;</button>
             </div>
         </div>
     );
 };
 
-export default Popup;
+export default Popup;   

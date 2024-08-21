@@ -10,14 +10,13 @@ import iconPosgrestSQL from "./img/Postgresql.png"
 import useIntersection from "./useIntersection.jsx";
 
 const skillData = [
-  { id: 1, title: 'HTML 5', icon: iconHtml , progress: 100},
-  { id: 2, title: 'CSS 3', icon: iconCSS , progress: 80},
-  { id: 3, title: 'Javascript', icon: iconJs , progress: 70},
-  { id: 4, title: 'React', icon: iconReact , progress: 70},
-  { id: 5, title: 'Python', icon: iconPython, progress: 50},
-  { id: 6, title: 'PosgrestSql', icon: iconPosgrestSQL, progress: 60},
-  { id: 7, title: 'PHP', icon: iconPHP, progress: 60},
-
+  { id: 1, title: 'HTML 5', icon: iconHtml , progress: 100, color: '#E44D26'},
+  { id: 2, title: 'CSS 3', icon: iconCSS , progress: 80, color: '#1572B6'},
+  { id: 3, title: 'Javascript', icon: iconJs , progress: 70, color: '#F7DF1E'},
+  { id: 4, title: 'React', icon: iconReact , progress: 70, color: '#61DAFB'},
+  { id: 5, title: 'Python', icon: iconPython, progress: 50, color: '#3776AB'},
+  { id: 6, title: 'PosgrestSql', icon: iconPosgrestSQL, progress: 60, color: '#336791'},
+  { id: 7, title: 'PHP', icon: iconPHP, progress: 60, color: '#777BB4'},
 ];
 
  const Skills = () =>{
@@ -49,7 +48,7 @@ const skillData = [
                       <div className="cardBar">
                         <div className="cardBar_container">
                           <span className="cardBar_container-all"></span>
-                          <span className="cardBar_container-partial" style={{ width: `${skill.progress}%` }}></span>
+                          <span className="cardBar_container-partial" style={{ width: `${skill.progress}%`, backgroundColor: skill.color }}></span>
                         </div>
                         <p>{skill.progress ? `${skill.progress}%` : ''}</p>
                       </div>
@@ -65,13 +64,6 @@ const skillData = [
                 </path>
               </svg>
           </div>
-
-
-
-
-
-
-           
         </section>
 
         

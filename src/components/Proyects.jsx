@@ -49,7 +49,7 @@ const Proyects = () => {
     },
     {
       imagen: imgCursosFemulp,
-      titulo: "Proyecto 1",
+      titulo: "Proyecto 2",
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       enlace: "https://ejemplo.com/proyecto1",
       tecnologias: [
@@ -63,7 +63,7 @@ const Proyects = () => {
     },
     {
       imagen: imgCursosFemulp,
-      titulo: "Proyecto 1",
+      titulo: "Proyecto 3",
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       enlace: "https://ejemplo.com/proyecto1",
       tecnologias: [
@@ -77,7 +77,7 @@ const Proyects = () => {
     },
     {
       imagen: imgCursosFemulp,
-      titulo: "Proyecto 1",
+      titulo: "Proyecto 4",
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       enlace: "https://ejemplo.com/proyecto1",
       tecnologias: [
@@ -91,7 +91,7 @@ const Proyects = () => {
     },
     {
       imagen: imgCursosFemulp,
-      titulo: "Proyecto 1",
+      titulo: "Proyecto 5",
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       enlace: "https://ejemplo.com/proyecto1",
       tecnologias: [

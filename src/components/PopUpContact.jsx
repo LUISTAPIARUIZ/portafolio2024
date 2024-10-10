@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { db } from "../config/firebaseConfig"; // Importamos la configuración de Firebase
+import { collection, addDoc } from "firebase/firestore"; // Importar funciones de Firestore
+import emailjs from 'emailjs-com'; // Importamos EmailJS
 import './styles/PopUpContact.css';
 
 const Popup = ({ show, onClose }) => {
     const [activeFields, setActiveFields] = useState({});
     const [animate, setAnimate] = useState(false);
+    const [formData, setFormData] = useState({
+        nameContact: '',
+        phoneContact: '',
+        emailContact: '',
+        subjectContact: '',
+        messageContact: ''
+    });
 
     useEffect(() => {
         if (show) {
@@ -28,12 +38,67 @@ const Popup = ({ show, onClose }) => {
         }
     };
 
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [id]: value
+        }));
+    };
+
     const isActive = (id) => activeFields[id] || document.getElementById(id)?.value;
 
-    const handleSubmit = (e) => {
+    const sendEmail = (emailData) => {
+        // Configura los parámetros para enviar el correo con EmailJS
+        emailjs.send('service_wjehjl8', 'template_ww292p2', emailData, 'Z50imvduaa34ySn1p')
+        .then((response) => {
+            console.log('Correo enviado exitosamente', response.status, response.text);
+            alert('Correo enviado exitosamente');
+        }, (err) => {
+            console.log('Error al enviar el correo', err);
+            alert('Hubo un error al enviar el correo, por favor intenta de nuevo.');
+        });
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Aquí puedes agregar la lógica para manejar el envío del formulario
-        console.log('Formulario enviado');
+
+        try {
+            // Enviar los datos a Firestore
+            await addDoc(collection(db, "contactMessages"), {
+                Nombre: formData.nameContact,
+                Celular: formData.phoneContact,
+                Correo: formData.emailContact,
+                Asunto: formData.subjectContact,
+                Mensaje: formData.messageContact,
+                timestamp: new Date()
+            });
+
+            // Enviar correo con EmailJS
+            const emailData = {
+                to_name: formData.nameContact,  // Nombre de quien envía el mensaje
+                to_email: formData.emailContact,  // Correo del destinatario (la persona que llenó el formulario)
+                subject: formData.subjectContact, // Asunto del mensaje
+                message: formData.messageContact  // Mensaje enviado
+            };
+
+            sendEmail(emailData);
+
+            // Limpiar el formulario después de enviar
+            setFormData({
+                nameContact: '',
+                phoneContact: '',
+                emailContact: '',
+                subjectContact: '',
+                messageContact: ''
+            });
+
+            alert('Mensaje enviado correctamente');
+
+        } catch (error) {
+            console.error('Error al enviar el mensaje: ', error);
+            alert('Hubo un error al enviar el mensaje, por favor intenta de nuevo.');
+        }
     };
 
     return (
@@ -55,8 +120,11 @@ const Popup = ({ show, onClose }) => {
                                 type="text"
                                 id="nameContact"
                                 name="nameContact"
+                                value={formData.nameContact}
+                                onChange={handleChange}
                                 onFocus={handleFocus}
                                 onBlur={handleBlur}
+                                required
                             />
                         </div>
                         <div className="popup__form-block block-dual">
@@ -71,8 +139,11 @@ const Popup = ({ show, onClose }) => {
                                     type="text"
                                     name="phoneContact"
                                     id="phoneContact"
+                                    value={formData.phoneContact}
+                                    onChange={handleChange}
                                     onFocus={handleFocus}
                                     onBlur={handleBlur}
+                                    required
                                 />
                             </div>
                         </div>
@@ -87,8 +158,11 @@ const Popup = ({ show, onClose }) => {
                                 type="email"
                                 name="emailContact"
                                 id="emailContact"
+                                value={formData.emailContact}
+                                onChange={handleChange}
                                 onFocus={handleFocus}
                                 onBlur={handleBlur}
+                                required
                             />
                         </div>
                         <div className="popup__form-block">
@@ -102,8 +176,11 @@ const Popup = ({ show, onClose }) => {
                                 type="text"
                                 name="subjectContact"
                                 id="subjectContact"
+                                value={formData.subjectContact}
+                                onChange={handleChange}
                                 onFocus={handleFocus}
                                 onBlur={handleBlur}
+                                required
                             />
                         </div>
                         <div className="popup__form-block">
@@ -116,12 +193,15 @@ const Popup = ({ show, onClose }) => {
                             <textarea
                                 name="messageContact"
                                 id="messageContact"
+                                value={formData.messageContact}
+                                onChange={handleChange}
                                 onFocus={handleFocus}
                                 onBlur={handleBlur}
+                                required
                             ></textarea>
                         </div>
                         <div className="popup__form-block btnEnviarContact">
-                            <button className='btnSubmitFormContact' type='button' onClick={handleSubmit}>Enviar</button>
+                            <button className='btnSubmitFormContact' type='submit'>Enviar</button>
                         </div>
                     </form>
                 </div>
@@ -131,4 +211,4 @@ const Popup = ({ show, onClose }) => {
     );
 };
 
-export default Popup;   
+export default Popup;

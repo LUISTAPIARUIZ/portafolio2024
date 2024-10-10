@@ -37,7 +37,7 @@ const Proyects = () => {
       imagen: imgCursosFemulp,
       titulo: "Proyecto 1",
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      enlace: "https://ejemplo.com/proyecto1",
+      enlace: "https://femulp.org/cursosFemulp/",
       tecnologias: [
         { icon: faHtml5, color: "#E34F26" },
         { icon: faCss3Alt, color: "#1572B6" },
@@ -46,63 +46,7 @@ const Proyects = () => {
         { icon: faDatabase, color: "#4479A1" },
         { icon: faBootstrap, color: "#7952B3" }
       ]
-    },
-    {
-      imagen: imgCursosFemulp,
-      titulo: "Proyecto 2",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      enlace: "https://ejemplo.com/proyecto1",
-      tecnologias: [
-        { icon: faHtml5, color: "#E34F26" },
-        { icon: faCss3Alt, color: "#1572B6" },
-        { icon: faJsSquare, color: "#F7DF1E" },
-        { icon: faPhp, color: "#777BB4" },
-        { icon: faDatabase, color: "#4479A1" },
-        { icon: faBootstrap, color: "#7952B3" }
-      ]
-    },
-    {
-      imagen: imgCursosFemulp,
-      titulo: "Proyecto 3",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      enlace: "https://ejemplo.com/proyecto1",
-      tecnologias: [
-        { icon: faHtml5, color: "#E34F26" },
-        { icon: faCss3Alt, color: "#1572B6" },
-        { icon: faJsSquare, color: "#F7DF1E" },
-        { icon: faPhp, color: "#777BB4" },
-        { icon: faDatabase, color: "#4479A1" },
-        { icon: faBootstrap, color: "#7952B3" }
-      ]
-    },
-    {
-      imagen: imgCursosFemulp,
-      titulo: "Proyecto 4",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      enlace: "https://ejemplo.com/proyecto1",
-      tecnologias: [
-        { icon: faHtml5, color: "#E34F26" },
-        { icon: faCss3Alt, color: "#1572B6" },
-        { icon: faJsSquare, color: "#F7DF1E" },
-        { icon: faPhp, color: "#777BB4" },
-        { icon: faDatabase, color: "#4479A1" },
-        { icon: faBootstrap, color: "#7952B3" }
-      ]
-    },
-    {
-      imagen: imgCursosFemulp,
-      titulo: "Proyecto 5",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      enlace: "https://ejemplo.com/proyecto1",
-      tecnologias: [
-        { icon: faHtml5, color: "#E34F26" },
-        { icon: faCss3Alt, color: "#1572B6" },
-        { icon: faJsSquare, color: "#F7DF1E" },
-        { icon: faPhp, color: "#777BB4" },
-        { icon: faDatabase, color: "#4479A1" },
-        { icon: faBootstrap, color: "#7952B3" }
-      ]
-    },
+    }
     // ... añade más proyectos aquí
   ];
 

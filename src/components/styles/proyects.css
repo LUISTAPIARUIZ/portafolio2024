@@ -123,17 +123,20 @@
 }
 
 .ProyectsMain__popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
 }
+
+
 
 .ProyectsMain__popup-content {
   width: 90%;
@@ -141,7 +144,7 @@
   height: 80vh;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 25px;
   background-color: #0a1929;
 }
 
@@ -245,6 +248,35 @@
   margin-right: 10px;
 }
 
+/* Ajuste para mostrar el título al hacer hover en la parte superior */
+.ProyectsMain__Titulo {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    font-size: 1.2rem;
+    transition: top 0.3s ease;
+    z-index: 2;
+}
+
+.ProyectsMain__img:hover .ProyectsMain__Titulo {
+    top: 0;
+}
+.tech-image {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    object-fit: contain; /* Esto asegura que la imagen no se deforme */
+  }
+  
+  .tech-icon {
+    font-size: 1.5rem; /* Ajuste de tamaño para los íconos de FontAwesome */
+    margin: 0 5px; /* Ajuste de espaciado entre íconos */
+  }
 @media only screen and (max-width: 1200px) {
     .containerProyects {
         width: 95%;

@@ -29,13 +29,25 @@
         height: 20rem;
         color: white;
     }
-    .headerDropDown__list-element{
+    .headerDropDown__list-element {
+        list-style: none;
+        color: white;
+    }
+    .headerDropDown__list-element a{
         display: flex;
         align-items: center;
+        text-decoration: none;
+        color: white;
         gap: 1rem;
         margin-bottom: 3rem;
         font-size: .8rem;
+        cursor: pointer;
     }
+    
+    .headerDropDown__list-element:hover{
+        transform: scale(1.1);
+    }
+
 
     .iconHome{
         background: url(../img/iconHogar.png) center/cover  no-repeat ;

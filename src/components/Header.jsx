@@ -12,16 +12,22 @@ const Header = ()=>{
                 </figure>
                 <ul className='headerDropDown__list'>
                     <li className='headerDropDown__list-element'>
-                        <div className="iconHome"></div>
-                        <h3>Inicio</h3>
+                        <a href="#mi-seccion">  
+                            <div className="iconHome"></div>
+                            <h3>Inicio</h3>
+                        </a> 
                     </li>
                     <li className='headerDropDown__list-element'>
-                        <div className="iconSkills"></div>
-                        <h3>Habilidades</h3>
+                        <a href="#mi-seccion">  
+                            <div className="iconSkills"></div>
+                            <h3>Habilidades</h3>
+                        </a> 
                     </li>
                     <li className='headerDropDown__list-element'>
-                        <div className="iconProyects"></div>
-                        <h3>Proyectos</h3>
+                        <a href="#mi-seccion">
+                            <div className="iconProyects"></div>
+                            <h3>Proyectos</h3>
+                        </a> 
                     </li>
                 </ul>
                 <div className="headerDropDown__btn">

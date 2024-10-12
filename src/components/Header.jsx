@@ -26,7 +26,6 @@ const Header = ()=>{
                     <li className='headerDropDown__list-element'>
                         <a href="#mi-seccion">
                             <div className="iconProyects"></div>
-                            <a href=""></a>
                             <h3>Proyectos</h3>
                         </a> 
                     </li>

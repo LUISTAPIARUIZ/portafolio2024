@@ -7,7 +7,6 @@ import Proyects from "./components/Proyects.jsx";
 import Footer from "./components/Footer.jsx";
 import PopUpContact from "./components/PopUpContact.jsx";
 import Loader from './components/Loader';
-import { app,db } from './config/firebaseConfig.js'; 
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);

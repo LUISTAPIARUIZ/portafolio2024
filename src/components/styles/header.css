@@ -1,4 +1,7 @@
 /*Estilos generales */
+html {
+    scroll-behavior: smooth;
+  }
 .headerDropDown{
     position: fixed;
     z-index: 10;
@@ -31,7 +34,6 @@
     }
     .headerDropDown__list-element {
         list-style: none;
-        color: white;
     }
     .headerDropDown__list-element a{
         display: flex;

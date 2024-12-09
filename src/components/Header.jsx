@@ -12,19 +12,19 @@ const Header = ()=>{
                 </figure>
                 <ul className='headerDropDown__list'>
                     <li className='headerDropDown__list-element'>
-                        <a href="#mi-seccion">  
+                        <a href="#asideMain">  
                             <div className="iconHome"></div>
                             <h3>Inicio</h3>
                         </a> 
                     </li>
                     <li className='headerDropDown__list-element'>
-                        <a href="#mi-seccion">  
+                        <a href="#containerSkills">  
                             <div className="iconSkills"></div>
                             <h3>Habilidades</h3>
                         </a> 
                     </li>
                     <li className='headerDropDown__list-element'>
-                        <a href="#mi-seccion">
+                        <a href="#proyects">
                             <div className="iconProyects"></div>
                             <h3>Proyectos</h3>
                         </a> 

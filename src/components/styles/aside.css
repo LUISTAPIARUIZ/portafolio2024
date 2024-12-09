@@ -120,6 +120,7 @@
     padding: .5rem;
     cursor: pointer;
     overflow: hidden;
+    margin-right: 1rem;
 
 }
 .slider1__presentation-button div{
@@ -150,6 +151,10 @@
 }
 .slider1__presentation-button:hover{
     color: white;
+}
+.btnSlider{
+    display: flex;
+    flex-direction: row;
 }
 
 

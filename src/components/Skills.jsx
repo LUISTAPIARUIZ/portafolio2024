@@ -25,7 +25,7 @@ const skillData = [
       threshold:0.3,
     });
     return(
-        <section className='containerSkills' id="particles-js">
+        <section className='containerSkills' id="containerSkills" >
           <div className='Skills'>
             <div className='titleSkills' >
               <h3> Habilidades</h3>

@@ -1,24 +1,48 @@
-.footerMain{
+.footerMain {
     width: 100%;
-    height: 4rem;
     background: #F7EFDD;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem 0  .5rem 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
-.containerNetworks{
-    width: 8rem;
-    height: 100%;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-}
-.containerNetworks__item{
-    width: auto;
-    height: auto;
-}
-.containerNetworks__item-icon ,.containerNetworks__item-icon img{
-    width: 2rem;
-    height: 2rem;
 
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footerText {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.containerNetworks {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.containerNetworks__item {
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #333;
+}
+
+.containerNetworks__item:hover {
+    transform: scale(1.2);
+    color: #0077b5; /* Cambia el color cuando se pasa sobre el icono (LinkedIn blue) */
+}
+
+.containerNetworks__icon {
+    font-size: 2rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.containerNetworks__icon:hover {
+    color: #000; /* Opcional: Cambia el color cuando pasas sobre el icono */
 }

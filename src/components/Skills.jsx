@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useEffect } from "react";
 import "./styles/skills.css"
 import iconHtml from "./img/html-5.png"
 import iconCSS from "./img/css.png"
@@ -6,6 +6,7 @@ import iconReact from "./img/React.png"
 import iconJs from "./img/js.png"
 import iconPython from "./img/Python.png"
 import iconPHP from "./img/PHP.png"
+import iconLaravel from "./img/laravel.png"
 import iconPosgrestSQL from "./img/Postgresql.png"
 import useIntersection from "./useIntersection.jsx";
 
@@ -17,6 +18,7 @@ const skillData = [
   { id: 5, title: 'Python', icon: iconPython, progress: 50, color: '#3776AB'},
   { id: 6, title: 'PosgrestSql', icon: iconPosgrestSQL, progress: 60, color: '#336791'},
   { id: 7, title: 'PHP', icon: iconPHP, progress: 60, color: '#777BB4'},
+  { id: 8, title: 'Laravel', icon: iconLaravel, progress: 70, color: '#FF3F35FF'},
 ];
 
  const Skills = () =>{
@@ -24,6 +26,23 @@ const skillData = [
     const [elementoRef,isIntersecting]= useIntersection({
       threshold:0.3,
     });
+    useEffect(() => {
+      if (isIntersecting) {
+        const cards = document.querySelectorAll('#carousel .skillcard');
+        const totalCards = cards.length;
+        
+        const angleStep = 360 / totalCards;
+        
+        cards.forEach((card, index) => {
+          const angle = angleStep * index;
+          card.style.transform = `rotateY(${angle}deg) translateZ(500px)`;
+          card.style.webkitTransform = `rotateY(${angle}deg) translateZ(500px)`;
+          card.style.mozTransform = `rotateY(${angle}deg) translateZ(500px)`;
+          card.style.msTransform = `rotateY(${angle}deg) translateZ(500px)`;
+          card.style.oTransform = `rotateY(${angle}deg) translateZ(500px)`;
+        });
+      }
+    }, [isIntersecting, skillData.length]);
     return(
         <section className='containerSkills' id="containerSkills" >
           <div className='Skills'>

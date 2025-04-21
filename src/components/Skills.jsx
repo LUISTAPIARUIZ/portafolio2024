@@ -42,7 +42,7 @@ const skillData = [
           card.style.oTransform = `rotateY(${angle}deg) translateZ(500px)`;
         });
       }
-    }, [isIntersecting, skillData.length]);
+    }, [isIntersecting]);
     return(
         <section className='containerSkills' id="containerSkills" >
           <div className='Skills'>
